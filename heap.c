@@ -8,8 +8,8 @@ void upheap(int);
 void getheap();
 void downheap(int);
 void print();
-int heap[HEAP_MAX_SIZE + 1];
-int size;
+int heap[HEAP_MAX_SIZE + 1] = {0, 1, 2, 3, 4, 5, 6, 7, 0, 0, 0};  // 0: No number setted
+int size = 7;
 
 int main() {
     start_heap();
@@ -22,11 +22,9 @@ void start_heap() {
     char command;
 
     // Initialize heap
-    for(i = 1; i <= 7; i++)
-        heap[i] = i;
-    for(i = 1; i <= 7; i++)
-        upheap(i);
-    size = 7;
+    for(i = 7; i >= 1; i--)
+        downheap(i);
+
     printf("Now data in heap:\n");
     print();
 
