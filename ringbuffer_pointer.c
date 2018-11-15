@@ -47,7 +47,7 @@ void start_queue() {
 }
 
 int *next_queue(int *now) {
-    return (now == queue + QUEUE_MAX_SIZE) ? queue : (now + 1);
+    return queue + (now - queue + 1) % (QUEUE_MAX_SIZE + 1);
 }
 
 void enqueue(int item) {
