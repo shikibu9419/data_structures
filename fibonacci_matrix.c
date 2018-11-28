@@ -3,12 +3,10 @@
 
 int *calculate(int *, int);
 int *matrix_product(int *, int *);
-int identity[4] = {1, 0, 0, 1}; // for return identity matrix
+const int IDENTIFY[4] = {1, 0, 0, 1}; // to return identify matrix in function: calculate()
 
 int main(void) {
     int n;
-    int i, j;
-
     printf("Number: ");
     scanf("%d", &n);
 
@@ -22,7 +20,7 @@ int main(void) {
 
 int *calculate(int *matrix, int n) {
     if(n == 0)
-        return identity;
+        return IDENTIFY;
     if(n % 2)
         return matrix_product(matrix, calculate(matrix, n - 1));
 
