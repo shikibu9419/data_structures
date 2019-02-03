@@ -4,3 +4,4 @@
 - heap
 - fibonacci (オーダ O(n) の実装と O(log n) の実装)
 - heapsort
+- binary search tree (bstree.c)
